@@ -2,7 +2,7 @@
 import time
 import random
 from selenium import webdriver
-chrome_driver = "C:/Users/guzy0/Desktop/dbg/抢口罩/chromedriver.exe"
+chrome_driver = "./chromedriver.exe"
 browser = webdriver.Chrome(executable_path=chrome_driver)
 url1 = 'https://cas.sysu.edu.cn/cas/login?service=https%3A%2F%2Fjwxt.sysu.edu.cn%2Fjwxt%2Fapi%2Fsso%2Fcas%2Flogin%3Fpattern%3Dstudent-login'
 browser.get(url1)
