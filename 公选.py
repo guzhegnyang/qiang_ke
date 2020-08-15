@@ -19,9 +19,9 @@ CAPTCHA.send_keys(captcha)
 signin_btn = browser.find_element_by_xpath('//*[@id="fm1"]/section[2]/input[4]')
 signin_btn.click()
 names = ['课名1', '课名2']                                                 #填若干课名，保证搜索的时候不要有重的
-is_reg = dict()
-for i in names:
-    is_reg[i] = 0
+is_reg = list()
+for i in range(len(names)):
+    is_reg.append(0)
 url2 = 'https://jwxt.sysu.edu.cn/jwxt/mk/courseSelection/?resourceName=%25E9%2580%2589%25E8%25AF%25BE'
 browser.get(url2)
 num = len(names)
@@ -41,11 +41,11 @@ except:
     item.click()
     search = browser.find_element_by_xpath('//*[@id="courseName"]')
     search_btn = browser.find_element_by_xpath('//*[@id="root"]/div/div/div[2]/div/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/form/div[1]/div[1]/div[2]/div/span/span/button/div')
-    for i in names:
+    for i in range(len(names)):
         if is_reg[i] == 0:
             try:
                 search.clear()
-                search.send_keys(i)
+                search.send_keys(names[i])
                 search_btn.click()
                 time.sleep(0.5)
             except:
